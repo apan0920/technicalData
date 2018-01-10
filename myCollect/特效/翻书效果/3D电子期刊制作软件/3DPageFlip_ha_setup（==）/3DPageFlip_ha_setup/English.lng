@@ -1,0 +1,252 @@
+###########################################################
+#
+#  Language:		简体中文
+#  Author:		大眼仔~旭(Anan)
+#  Product Name:	
+#  Product Version:	2.6.4 
+#
+###########################################################
+
+[frmMain]
+ ts1.Caption                   				=设计设置
+ lbl1.Caption                  				=请在这里自定义 flash 模板
+ lblTitle.Caption              				=标题
+ ts2.Caption                   				=目录
+ lbllb2.Caption                				=在这里你可以设置目录表
+ lbllb1.Caption                				=标题(&T):
+ lbllb4.Caption                				=页面(&P):
+ lblRecentProject.Caption      				=最近项目
+ lblDemo.Caption               				=演示
+ lblOpenPrj.Caption            				=打开...
+ lbl2.Caption                  				=从打开输出文件夹
+ lblDoc.Caption                				=帮助文档
+ lblHomePage.Caption           				=主页
+ lblSupport.Caption            				=支持
+ lblContactus.Caption          				=联系我们
+ lblFAQ.Caption                				=常见问题
+ lblTopTitle.Caption           				=3D PageFlip 专业版
+ lblCopyright.Caption          				=版权所有 by 3dpageflip.com
+ lblnew.Caption                				=创建新的
+ Files1.Caption                				=文件(&F)
+ RecentProjects1.Caption       				=最近项目
+ Exit1.Caption                 				=退出
+ Convert1.Caption              				=转换(&C)
+ Option1.Caption               				=选项(&O)
+ Help1.Caption                 				=帮助(&H)
+ About1.Caption                				=关于
+ actFlashSecurity.Caption      				=保护书籍
+ actFlashInfo.Caption          				=Flash 信息
+ actApplyChange.Caption        				=应用更改(&A)
+ actImport.Caption             				=导入 PDF
+ actPublish.Caption            				=转换到 3D 书籍
+ actSelTemplate.Caption        				=全景
+ actLanguage.Caption           				=Flash 语言
+ actExportTheme.Caption        				=导出当前设置为主题
+ actImportTheme.Caption        				=导入主题
+ actSaveProjectAs.Caption      				=项目另存为...
+ actOpenProject.Caption        				=打开项目
+ actBatchConvert.Caption       				=批量转换
+ actPageEditor.Caption         				=编辑页面(&E)
+ acthelp.Caption               				=帮助
+ actclosePrj.Caption           				=关闭项目
+ actSavePrj.Caption            				=保存项目
+ actContactus.Caption          				=联系我们...
+ actOpenPrjFolder.Caption      				=从输出文件夹打开项目
+ actExportPageInfo.Caption     				=导出页面信息
+ actImportPageInfo.Caption     				=导入页面信息
+ actSaveTemplate.Hint                                   =保存模板设置。
+ actOpenTemplate.Hint                                   =导入 Flash 模板设置。
+
+[frmImportPDF]
+ grpSourcePDF.Caption          				=源 PDF 文件
+ btnBroswer.Caption            				=浏览...
+ btnOpenPDF.Caption            				=打开它(&O)
+ grpPageRanges.Caption         				=导入页面范围
+ lblPageRangeExample.Caption   				=例如:1,9-21
+ rbCustomRage.Caption          				=自定义范围:
+ rbAllPage.Caption             				=所有页面(&A)
+ grpQuality.Caption            				=页面质量和大小
+ lbllb5.Caption                				=高值生成更好的网页的质量，但需要更多的磁盘空间和更多的时间来下载。
+ lbllb3.Caption                				=质量和大小:
+ cbbQuality.Text               				=更高质量的大文件大小
+ cbbQuality.Items              				=更高质量较大文件大小||高质量大型文件大小||中等质量中等文件大小||低质量小文件大小||低质量较小文件大小
+ chkContents.Caption           				=内容导入表中
+ chkImportSearch.Caption       				=导入搜索
+ chkImportLink.Caption         				=导入链接
+ chkDetectWidePages.Caption    				=检测白页
+ grpEngine.Caption             				=渲染引擎
+ lbllb1.Caption                				=选择渲染引擎 ||导入 PDF 文件
+ btnApplication.Caption        				=应用程序
+ btnImportpdf.Caption          				=立即导入
+ btnCancel.Caption             				=取消
+
+[frmPublish]
+ btnConvert.Caption            				=转换
+ btnCancel.Caption             				=取消
+ grppath.Caption               				=路径
+ lblfolder.Caption             				=输入文件夹(&O):
+ lblfilename.Caption           				=文件名(&N):
+ lblhtml.Caption               				=.html
+ btnBrowse.Caption             				=浏览...
+ btnOpen.Caption               				=打开
+ grpHtmlTitle.Caption          				=Html 标题(&T)
+ lblhtmltitle.Caption          				=HTML 标题(&T)
+ btnAdvanced.Caption           				=高级
+ lblCreateMobileVersionTip.Caption			=制作输出 iPad，iPhone 和 Android移 动设备上的页面翻转电子书作品
+ btnEpubOption.Caption         				=选项(&O)
+ chkCreateEpub.Caption         				=制作 ePub 格式
+ chkCreateMobile.Caption       				=制作手机版本，针对移动请选择一个模板:
+ chkburn.Caption               				=刻录到 CD
+ lblCDWriter.Caption           				=CD 刻录机(&W)
+ lbl1.Caption                  				=光盘标题(&D):
+
+[frmBatchConvert]
+ lbl3.Caption                  				=设置
+ ts1.Caption                   				=输出设置
+ btnApplication.Caption        				=应用程序
+ grpOutputFormat.Caption       				=输出类型
+ rbFormatHTML.Caption          				=*.html
+ rbFormatExe.Caption           				=*.exe
+ rbFormatZip.Caption           				=*.zip
+ chkCreateMobile.Caption       				=制作手机版本，针对移动请选择一个模板:
+ grpOutPath.Caption            				=路径
+ lblOutputPath.Caption         				=输出文件夹:
+ btnBrowser.Caption            				=浏览(&B)...
+ btnOpen.Caption               				=打开(&O)
+ grpOptions.Caption            				=选项
+ lblTitle.Caption              				=HTML 标题(&T):
+ btnAdvanceSetting.Caption     				=高级(&A)
+ ts2.Caption                   				=PDF 设置
+ grpPageRange.Caption          				=页面导入范围
+ lblPageRangeExample.Caption   				=例如:1,9-21,30
+ rbPageRangeAll.Caption        				=全部页面(&A)
+ rbPageRangeCustom.Caption     				=自定义页面:
+ grpQuality.Caption            				=页面质量和大小
+ lbl11.Caption                 				=较高的值生成更好的质量，但需要更多的磁盘空间和更多的时间来下载。
+ lbl12.Caption                 				=重量和大小:
+ chkImportBookmark.Caption     				=导入目录
+ chkImportLinks.Caption        				=导入链接
+ chkImportSearch.Caption       				=导入搜索
+ btnBatchConvert.Caption       				=转换到 Flash
+ btnBatchCancel.Caption        				=停止
+ lbl2.Caption                  				=转换到 Flash
+ btnAddDirAction.Caption       				=添加文件夹
+ btnAddPdf.Caption             				=添加 PDF
+ btnDelPdf.Caption             				=删除
+ btnDelAllPdf.Caption          				=清除
+ btnUp.Caption                 				=上移
+ btnDown.Caption               				=下移
+ lbl1.Caption                  				=添加 PDF 文档
+
+[frmPresenterSetting]
+ .Caption                      				=演示设置
+ lbllb1.Caption                				=演示设置
+ lblInfo.Caption               				=信息:
+ lblEmail.Caption              				=E-mail:
+ lblWebSite.Caption            				=网站:
+ lblAuthor.Caption             				=作者:
+ btnOk.Caption                 				=确定
+ btnCancel.Caption             				=取消
+
+[frmFlashSecurity]
+ lbl2.Caption                  				=注意 ||单密码选项，意味着用户需要输入密码查看 flash 书籍。||||排除头版选项是设置一个页码，后者所有的页面不能 ||被视为无需输入密码。
+ GroupBox1.Caption             				=安全类型
+ rbSecurityNo.Caption          				=无安全(&N)
+ rbSecuritySinglePassword.Caption			=单密码(&S):
+ gbPageRange.Caption           				=保护范围
+ rbPageRangeAll.Caption        				=所有页面(&A)
+ rbPageRangeFrontPage.Caption  				=排除头版(&E)
+ btnOK.Caption                 				=确定(&O)
+ btnClose.Caption              				=关闭(&C)
+
+[frmFlashLanguage]
+ .Caption                      				=语言设置
+ lbl2.Caption                  				=你可以新建或编辑 3D Page Flip 语言。||下面的标签的列是将被显示在 flash 的字符串。   ||该语言将会被列在 flash 模板设置中
+ lblClose.Caption              				=语言名称:
+ btnAdd.Caption                				=新建语言(&N)
+ btnDel.Caption                				=删除(&D)
+ btnSaveAs.Caption             				=另存为(&A)...
+ btnLoad.Caption               				=载入(&L)...
+ cbbLanguage.Text              				=Chinese
+ grp1.Caption                  				=语言设置
+ btnEditText.Caption           				=编辑(&E)
+ btnOK.Caption                 				=确定(&O)
+ btnClose.Caption              				=取消(&C)
+
+[frmSelectTemp]
+ .Caption                      				=选择一个模板
+ lbl2.Caption                  				=这里选择一个 flash 模板。 (双击作出快速的选择) ||(在将来会有越来越多的模板提供。)
+ lbllb1.Caption                				=在线获取更多主题
+ btnOk.Caption                 				=确定
+ btnCancel.Caption             				=取消
+btnImportTheme.Caption                                  =导入主题
+btnRemoveTheme.Caption                                  =清除主题
+[STRINGS]
+1							 = 感谢您注册
+ 2							 = 无效注册码
+ 3							 = 该产品已被授权。 
+ 4							 = 该产品已被许可给:
+
+ 5					= Q: 如何购买||A: 点击 "在线产品" 上方按钮, 或者访问 (http://www.3dpageflip.com) 更多的选择。 收到您的订单后，我们会向您发送注册密钥。如果您无法访问互联网，请拨打我们的免费电话 1-877-353-7297，给运营商的产品编号 %s 。产品价格 %s。
+ 6					= 注意: 该产品是一种可在购买前尝试的产品。未注册版本有一定的局限性: 添加到输出 flash 时会有水印。如果您订购的话，你会得到注册密钥（授权码），输入下面的代码后，限制删除，这意味着输出文件将不被添加水印。
+
+
+
+
+
+11                            				=开始搜索文本导入。这将需要几分钟...
+12                            				=没有安装 PowerPoint!
+13                            				=保存到:
+14                            				=该文件不存在。
+15                            				=请选择一个输出文件的文件夹
+16                            				=文件 %s 已经存在。你想覆盖它吗?
+17                            				=格式错误输出路径!
+18                            				=//错误！ 原因 ：
+19                            				=完成进度
+20                            				=完成转换。你想打开目标目录吗?
+21                            				=>>>写入完成。
+22                            				=>>>写入完成错误:%s.s
+23                            				=开始刻录...
+24                            				=你一定要覆盖吗?
+25                            				=警告...
+26                            				=输出路径或名称是空的!
+27                            				=开始导入链接。这可能需要几分钟，请稍候...
+28                            				=正常页面 %d 到 %d
+28                            				=正常页面 %d 到 %d
+29                            				=导入页面 %d 到 %d
+30                            				=较大页面 %d 到 %d
+31                            				=开始导入标签内容。这可能需要几分钟，请稍候...
+32                            				=缩略图页面 %d 到 %d
+33                            				=无效项目文件
+34                            				=开始分析文件。这可能需要几分钟，请稍候...
+35                            				=分析文件完成。
+36                            				=成功导出。
+37                            				=导出完成。
+38                            				=您确定要永久删除所选的 [%s] 主题模板吗?
+39                            				=删除主题
+41                            				=请选择输出文件夹
+42                            				=打开项目的输出文件夹错误。.
+43                            				=请选择一个有效的图像。
+44                            				=保存完成
+45                            				=主题已经存在。你想替换吗?
+46                            				=开始储存项目，请稍候几分钟
+47                            				=开始打开该项目，请稍候几分钟
+48                            				=保存当前项目吗?
+49                            				=保存项目
+50                            				=开始导出文件。这可能需要几分钟，请稍候...
+51                            				=开始导出  epub。请等待几分钟
+52                            				=导出 exe 文件失败
+175                           				=>>> 写入完成。
+176                           				=>>> 写入完成错误:%s.
+177                           				=完成转换。打开它吗?
+178                           				=完成进度
+214                           				=你确定要永久删除所选 [%s] 的模板吗? 所有 [%s] 主题也将被删除。
+215                           				=删除模板
+444                           				=分析页面文本:%d
+445                           				=索引搜索页面文字:%d
+446                           				=生成搜索页面文件:%d
+447                           				=不是一个有效的数字!
+448                           				=不是一个有效的颜色!
+449                           				=不能为空
+450                           				= Flash 模板文件未找到:
+451                           				=模板[%s,%s] 未找到!

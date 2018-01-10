@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://mpcthemes.net/flipbook/html/#15 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Responsive Flip Book powered by jQuery</title>
+	<!-- Meta -->
+	 
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="keywords" content="flip book, book, page, flip, effect, jquery, html5, magazine, pageflip, flipbook, pagefliper, newspaper, ipad, iphone, android, ios, mpc, massivePixelCreation">
+	<meta name="description" content="HTML Flip Book is a jQuery powered magazine components which lets you easily create: books, magazines and newspapers.">
+	
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="./Responsive Flip Book powered by jQuery_files/style.css">
+	<link rel="stylesheet" type="text/css" href="./Responsive Flip Book powered by jQuery_files/page-styles.css">
+	<!-- styles switcher -->
+	<link rel="stylesheet" type="text/css" href="./Responsive Flip Book powered by jQuery_files/ss-styles.css">
+	<link rel="stylesheet" type="text/css" href="./Responsive Flip Book powered by jQuery_files/colorpicker.css">
+	
+	
+	<style type="text/css">
+	
+		#flipbook-1 {
+			margin-top: 20px;
+			margin-bottom: 0px;
+			margin-left: 0px;
+			margin-right: 0px;
+			
+			width: 712px; 
+			height: 510px; 
+		}
+		
+		#flipbook-1 div.fb-page div.page-content {
+			margin: 10px 0px; 
+		}
+		
+		#flipbook-1 .turn-page {
+			width: 356px;		
+			height: 510px;
+			background: #ECECEC;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+							box-shadow: inset -1px 0px 1px 0px #BFBFBF; 
+			
+		}
+		
+		#flipbook-1 .last .turn-page,
+		#flipbook-1 .even .turn-page {
+			border-radius: 0px;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;	
+							box-shadow: inset 1px 0px 1px 0px #BFBFBF;
+		}
+		
+		#flipbook-1 .fpage .turn-page {
+			border-radius: 0px;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+							box-shadow: inset 1px 0px 1px 0px  #BFBFBF;
+		}
+		
+		#flipbook-1 .last .fpage .turn-page,
+		#flipbook-1 .even .fpage .turn-page {
+			border-radius: 0px;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+							box-shadow: inset -1px 0px 1px 0px #BFBFBF;
+		}
+		
+		#flipbook-container-1 div.page-content div.container img.bg-img {
+			margin-top: 0px;
+			margin-left: 0px;
+		}
+		
+		#flipbook-container-1 div.page-content.first div.container img.bg-img {
+			margin-top: 10px;
+		}
+	
+		#flipbook-container-1 div.page-content.even div.container img.bg-img {
+			left: 0px;
+		}
+		
+		#flipbook-container-1 div.page-content.last div.container img.bg-img {
+			left: 10px;
+			margin-top: 10px;
+		}
+	
+		#flipbook-1 div.page-transition.last div.page-content,
+		#flipbook-1 div.page-transition.even div.page-content,
+		#flipbook-1 div.turn-page-wrapper.odd div.page-content {
+			margin-left: 0px;
+			margin-right: 10px; 
+		}
+	
+		#flipbook-1 div.turn-page-wrapper.first div.page-content {
+			margin-right: 10px;
+			margin-left: 0px; 
+		}
+	
+		#flipbook-1 div.page-transition.first div.page-content,
+		#flipbook-1 div.page-transition.odd div.page-content,
+		#flipbook-1 div.turn-page-wrapper.even div.page-content,
+		#flipbook-1 div.turn-page-wrapper.last div.page-content {
+			margin-left: 10px;
+		}
+		
+		#flipbook-1 div.fb-page-edge-shadow-left,
+		#flipbook-1 div.fb-page-edge-shadow-right,
+		#flipbook-1 div.fb-inside-shadow-left,
+		#flipbook-1 div.fb-inside-shadow-right {
+			top: 10px;
+			height: 490px;
+		}
+		
+		#flipbook-1 div.fb-page-edge-shadow-left {
+			left: 10px;
+		}
+		
+		#flipbook-1 div.fb-page-edge-shadow-right {
+			right: 10px;
+		}
+		
+		/* Zoom */
+					
+		#flipbook-container-1 div.zoomed-shadow {
+			opacity: 0.2;
+		}
+		
+		#flipbook-container-1 div.zoomed {
+			border: 10px solid #ECECEC;
+			border-radius: 10px;
+							box-shadow: 0px 0px 0px 1px #D0D0D0;	
+				
+		}	
+		
+		/* Show All Pages */
+		#flipbook-container-1 div.show-all div.show-all-thumb {
+			margin-bottom: 12px;
+			height: 180px;
+			width: 125px;
+			border: 1px solid #878787;
+		}
+		
+		#flipbook-container-1 div.show-all div.show-all-thumb.odd {
+			margin-right: 10px;
+			border-left: none;
+		}
+		
+		#flipbook-container-1 div.show-all div.show-all-thumb.odd img.bg-img {
+			padding-left: 250px;
+		}
+		
+		#flipbook-container-1 div.show-all div.show-all-thumb.odd.first img.bg-img {
+			padding-left: 0px;
+		}
+		
+		#flipbook-container-1 div.show-all div.show-all-thumb.even {
+			border-right: none;
+		}
+		
+		#flipbook-container-1 div.show-all div.show-all-thumb.last-thumb {
+			margin-right: 0px;
+		}
+		
+		#flipbook-container-1 div.show-all {
+			background: #F6F6F6;
+			border-radius: 10px;
+							border: 1px solid #D6D6D6;
+		}
+		
+		#flipbook-container-1 div.show-all div.content {
+			top: 10px;
+			left: 10px;
+		}
+	
+		
+		/* Inner Pages Shadows */
+				
+					#flipbook-1 div.fb-page-edge-shadow-left,
+			#flipbook-1 div.fb-page-edge-shadow-right {
+				display: none;
+			}
+				
+	</style>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/swfobject2.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/jquery-1.7.1.min.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/jquery.easing.1.3.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/turn.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/flipbook.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/jquery.doubletap.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/jquery.color.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/page-js.js.下载"></script>
+	<!-- styles switcher -->
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/ss-jquery.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/customSelect.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/easing-jquery.js.下载"></script>
+	<script type="text/javascript" src="./Responsive Flip Book powered by jQuery_files/colorpicker.js.下载"></script>
+	
+<style type="text/css" media="screen">#videoDiv {visibility:hidden}</style></head>
+<body>
+
+<div id="flipbook-container-1" class="flipbook-container" style="background-image: none;">
+	
+	<!-- Flip book -->
+	<div id="flipbook-1" class="flipbook" style="position: relative; transform: translate3d(0px, 0px, 0px); width: 712px; height: 510px; left: 435px;">
+		<!-- Start Flip Book Pages -->
+		
+		<!-- Cover -->
+		
+		
+		<!-- Pages 2 & 3 Table of Content -->
+		
+		
+		<!-- Pages 4 & 5 Content Presentation -->
+		
+		
+		<!-- Pages 6 & 7 Device Support -->
+		
+		
+		<!-- Pages 8 & 9 Features -->
+		
+		
+		<!-- Pages 10 & 11 Responsive Design -->
+		
+
+		<!-- Pages 12 & 13 Cofiguration -->
+		
+	
+		<!-- Pages 14 & 15 Video -->
+		
+		
+		<!-- Back Cover -->
+		
+		
+		<!-- end Flip Book Pages -->
+		
+	<div class="turn-page-wrapper first" page="1" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page turn-page p1" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px;"><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content first" style="width: 346px; height: 490px;">
+				<div class="container">
+					<img src="./Responsive Flip Book powered by jQuery_files/cover.jpg" class="bg-img" style="height: 490px; width: 346px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/cover-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 346px;">
+				</div>
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper even" page="2" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p2" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px;"><div class="fb-page-edge-shadow-left" style="height: 490px;"></div><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content even" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div style="padding-top: 5%;" class="preview-content toc right">
+						<h2 class="enlarge" style="font-size: 28px; line-height: 19px;">Table of content</h2>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Use HTML &amp; build you own table of content</p>
+						<ul class="toc enlarge" style="font-size: 14px; line-height: 19px;">
+							<li><a href="http://mpcthemes.net/flipbook/html/#3"></a><span class="number">03</span><span class="text">Table of content</span></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#5"><span class="number">04</span><span class="text">Best way for content presentation</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#7"><span class="number">06</span><span class="text">All platforms supported</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#8"><span class="number">08</span><span class="text">Great responsive design</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#11"><span class="number">10</span><span class="text">Easy configuration</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#13"><span class="number">12</span><span class="text">Amazing features</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#15"><span class="number">14</span><span class="text">All media in one book</span></a></li>
+						</ul>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/02-03.jpg" class="bg-img" style="height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/02-03-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div></div><div class="turn-page-wrapper odd" page="3" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p3" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px;"><div class="fb-page-edge-shadow-right" style="height: 490px;"></div><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content odd" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div style="padding-top: 5%;" class="preview-content toc right">
+						<h2 class="enlarge" style="font-size: 28px; line-height: 19px;">Table of content</h2>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Use HTML &amp; build you own table of content</p>
+						<ul class="toc enlarge" style="font-size: 14px; line-height: 19px;">
+							<li><a href="http://mpcthemes.net/flipbook/html/#3"></a><span class="number">03</span><span class="text">Table of content</span></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#5"><span class="number">04</span><span class="text">Best way for content presentation</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#7"><span class="number">06</span><span class="text">All platforms supported</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#8"><span class="number">08</span><span class="text">Great responsive design</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#11"><span class="number">10</span><span class="text">Easy configuration</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#13"><span class="number">12</span><span class="text">Amazing features</span></a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#15"><span class="number">14</span><span class="text">All media in one book</span></a></li>
+						</ul>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/02-03.jpg" class="bg-img" style="margin-left: 0px; height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/02-03-zoomed.jpg" class="bg-img zoom-large" style="margin-left: 0px; height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper even" page="4" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p4" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px;"><div class="fb-page-edge-shadow-left" style="height: 490px;"></div><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content even" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content presentation left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Best way for content presentation</h3>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Flip book is a great tool to present your content, anywhere in the world. All you need to have is a web browser ( <a href="http://mpcthemes.net/flipbook/html/#7">we support all of them!</a> ).</p>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Flip book is a combination of new digital technology and analog habit well known from paper books.</p>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;"><b>It is better then standard presentation!</b> It draws viewer attention and creates great experience of flipping pages, <b>especially on touch screens!</b> </p>
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Use if for:</h4>
+						<ul class="enlarge" style="font-size: 13px; line-height: 19px;">
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">business presentations</a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">brochures</a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">portfolio</a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">photo albums</a></li>
+							<li>and much more...</li>
+						</ul>
+					</div>
+					<div class="preview-content presentation right">
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;"><b>We know how to create best flip books available!</b> Flash Flip Book – Flip books older brother is the <b style="color: #a40505;">best selling flip book</b> on ActiveDen. And the <b>second best selling product ever!</b></p>
+						<a href="http://codecanyon.net/user/mpc/portfolio?ref=mpc" target="_blank" class="button-purchase"></a>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/04-05.jpg" class="bg-img" style="height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/04-05-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper odd" page="5" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px; transform-origin: 0% 100% 0px;"><div class="fb-page double turn-page p5" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 100% 0px;"><div class="fb-page-edge-shadow-right" style="height: 490px;"></div><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content odd" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content presentation left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Best way for content presentation</h3>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Flip book is a great tool to present your content, anywhere in the world. All you need to have is a web browser ( <a href="http://mpcthemes.net/flipbook/html/#7">we support all of them!</a> ).</p>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Flip book is a combination of new digital technology and analog habit well known from paper books.</p>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;"><b>It is better then standard presentation!</b> It draws viewer attention and creates great experience of flipping pages, <b>especially on touch screens!</b> </p>
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Use if for:</h4>
+						<ul class="enlarge" style="font-size: 13px; line-height: 19px;">
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">business presentations</a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">brochures</a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">portfolio</a></li>
+							<li><a href="http://mpcthemes.net/flipbook/html/brochure/#3">photo albums</a></li>
+							<li>and much more...</li>
+						</ul>
+					</div>
+					<div class="preview-content presentation right">
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;"><b>We know how to create best flip books available!</b> Flash Flip Book – Flip books older brother is the <b style="color: #a40505;">best selling flip book</b> on ActiveDen. And the <b>second best selling product ever!</b></p>
+						<a href="http://codecanyon.net/user/mpc/portfolio?ref=mpc" target="_blank" class="button-purchase"></a>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/04-05.jpg" class="bg-img" style="margin-left: 0px; height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/04-05-zoomed.jpg" class="bg-img zoom-large" style="margin-left: 0px; height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px; background-image: -webkit-gradient(linear, 100% 100%, 0% 100%, color-stop(0.8, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); display: none;"></div></div><div class="turn-page-wrapper even" page="6" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p6" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 0% 0px;"><div class="fb-page-edge-shadow-left" style="height: 490px;"></div><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content even" style="width: 346px; height: 490px;">
+				<div class="container">
+					<img src="./Responsive Flip Book powered by jQuery_files/06-07.jpg" class="bg-img" style="height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/06-07-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 692px;">	
+				</div>	
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper odd" page="7" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px; transform-origin: 0% 100% 0px;"><div class="fb-page double turn-page p7" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 100% 0px;"><div class="fb-page-edge-shadow-right" style="height: 490px;"></div><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content odd" style="width: 346px; height: 490px;">
+				<div class="container">
+					<img src="./Responsive Flip Book powered by jQuery_files/06-07.jpg" class="bg-img" style="margin-left: 0px; height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/06-07-zoomed.jpg" class="bg-img zoom-large" style="margin-left: 0px; height: 490px; width: 692px;">	
+				</div>	
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px; background-image: -webkit-gradient(linear, 100% 0%, 0% 4.27426e-15%, color-stop(0.8, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); display: none;"></div></div><div class="turn-page-wrapper even" page="8" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p8" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 0% 0px;"><div class="fb-page-edge-shadow-left" style="height: 490px;"></div><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content even" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content features left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Amazing features</h3>
+					</div>
+					<div class="preview-content features right">
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Main features:</h4>
+						<ul class="enlarge" style="font-size: 14px; line-height: 19px;">
+							<li>Full book preview</li>
+							<li>High resolution Zoom</li>
+							<li>Slideshow </li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#15">Video support</a></li>
+							<li>Unlimited number of pages</li>
+							<li>Deep linking</li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#13">Easy to customize pages</a></li>
+						</ul>
+						
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Have a suggestion?</h4>
+						<a href="mailto:support@mpcreation.net"><img src="./Responsive Flip Book powered by jQuery_files/let-us-know.png" class="let-us-know enlarge" style="font-size: 13px; line-height: 19px;"></a>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/08-09.jpg" class="bg-img" style="height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/08-09-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 692px;">
+				</div>	
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper odd" page="9" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px; transform-origin: 0% 100% 0px;"><div class="fb-page double turn-page p9" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 100% 0px;"><div class="fb-page-edge-shadow-right" style="height: 490px;"></div><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content odd" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content features left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Amazing features</h3>
+					</div>
+					<div class="preview-content features right">
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Main features:</h4>
+						<ul class="enlarge" style="font-size: 14px; line-height: 19px;">
+							<li>Full book preview</li>
+							<li>High resolution Zoom</li>
+							<li>Slideshow </li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#15">Video support</a></li>
+							<li>Unlimited number of pages</li>
+							<li>Deep linking</li>
+							<li><a href="http://mpcthemes.net/flipbook/html/#13">Easy to customize pages</a></li>
+						</ul>
+						
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Have a suggestion?</h4>
+						<a href="mailto:support@mpcreation.net"><img src="./Responsive Flip Book powered by jQuery_files/let-us-know.png" class="let-us-know enlarge" style="font-size: 13px; line-height: 19px;"></a>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/08-09.jpg" class="bg-img" style="margin-left: 0px; height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/08-09-zoomed.jpg" class="bg-img zoom-large" style="margin-left: 0px; height: 490px; width: 692px;">
+				</div>	
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px; background-image: -webkit-gradient(linear, 100% 0%, 0% 4.27426e-15%, color-stop(0.8, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); display: none;"></div></div><div class="turn-page-wrapper even" page="10" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p10" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 0% 0px;"><div class="fb-page-edge-shadow-left" style="height: 490px;"></div><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content even" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content responsive left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Great responsive design</h3>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">We pay attantion to details.</p>
+					</div>
+					<div class="preview-content responsive right">
+						<ul class="enlarge" style="font-size: 13px; line-height: 19px;">
+							<li>Design that fits to every resolution</li>
+							<li>Elegant neutral icons</li>
+							<li>Background templates</li>
+							<li>Smooth transitions</li>
+							<li>Advanced shading</li>
+						</ul>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/10-11.jpg" class="bg-img" style="height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/10-11-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 692px;">
+				</div>
+				
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper odd" page="11" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px; transform-origin: 0% 100% 0px;"><div class="fb-page double turn-page p11" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 100% 0px;"><div class="fb-page-edge-shadow-right" style="height: 490px;"></div><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content odd" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content responsive left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Great responsive design</h3>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">We pay attantion to details.</p>
+					</div>
+					<div class="preview-content responsive right">
+						<ul class="enlarge" style="font-size: 13px; line-height: 19px;">
+							<li>Design that fits to every resolution</li>
+							<li>Elegant neutral icons</li>
+							<li>Background templates</li>
+							<li>Smooth transitions</li>
+							<li>Advanced shading</li>
+						</ul>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/10-11.jpg" class="bg-img" style="margin-left: 0px; height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/10-11-zoomed.jpg" class="bg-img zoom-large" style="margin-left: 0px; height: 490px; width: 692px;">
+				</div>
+				
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px; background-image: -webkit-gradient(linear, 100% 100%, 0% 100%, color-stop(0.8, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); display: none;"></div></div><div class="turn-page-wrapper even" page="12" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 15;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p12" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 0% 0px;"><div class="fb-page-edge-shadow-left" style="height: 490px;"></div><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content even" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content configuration left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Easy configuration</h3>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Build your own Flip Book without advanced knowledge of html, css and programming. <b style="color: #a40505;">It’s easy!</b> just <b style="color: #a40505;">read the documentation, use templates</b> and insert your content.</p>
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Customizable:</h4>
+						
+						<ul class="enlarge" style="font-size: 13px; line-height: 19px;">
+							<li>book dimensions</li>
+							<li>background images and color</li>
+							<li>book border</li>
+							<li>menu options</li>
+							<li>slideshow speed</li>
+						</ul>
+						
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">We Support</h4>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">If you have any problem with our product, please visit our <a href="http://mpc.ticksy.com/" target="_blank">support forums</a>.</p>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/12-13.jpg" class="bg-img" style="height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/12-13-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper odd" page="13" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px; transform-origin: 0% 100% 0px;"><div class="fb-page double turn-page p13" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 100% 0px;"><div class="fb-page-edge-shadow-right" style="height: 490px;"></div><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content odd" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content configuration left">
+						<h3 class="enlarge" style="font-size: 20px; line-height: 19px;">Easy configuration</h3>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">Build your own Flip Book without advanced knowledge of html, css and programming. <b style="color: #a40505;">It’s easy!</b> just <b style="color: #a40505;">read the documentation, use templates</b> and insert your content.</p>
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">Customizable:</h4>
+						
+						<ul class="enlarge" style="font-size: 13px; line-height: 19px;">
+							<li>book dimensions</li>
+							<li>background images and color</li>
+							<li>book border</li>
+							<li>menu options</li>
+							<li>slideshow speed</li>
+						</ul>
+						
+						<h4 class="enlarge" style="font-size: 16px; line-height: 19px;">We Support</h4>
+						<p class="enlarge" style="font-size: 14px; line-height: 19px;">If you have any problem with our product, please visit our <a href="http://mpc.ticksy.com/" target="_blank">support forums</a>.</p>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/12-13.jpg" class="bg-img" style="margin-left: 0px; height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/12-13-zoomed.jpg" class="bg-img zoom-large" style="margin-left: 0px; height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px; background-image: -webkit-gradient(linear, 100% 100%, 0% 100%, color-stop(0.8, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); display: none;"></div></div><div class="turn-page-wrapper even" page="14" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 16;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"><div class="fb-page double turn-page p14" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 0% 0px;"><div class="fb-page-edge-shadow-left" style="height: 490px;"></div><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content even" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content video left">
+						<h3 class="enlarge" style="font-size: 23px; line-height: 19px;">All media in one book</h3>
+						
+						<h4 class="enlarge" style="color: rgb(144, 36, 21); font-size: 15px; line-height: 19px;">Flip book accepts everything:</h4>
+						
+						<ul class="enlarge" style="font-size: 14px; line-height: 19px;">
+							<li>images</li>
+							<li>html</li>
+							<li>audio</li>
+							<li>video</li>
+						</ul>
+					</div>
+					<div class="video-content preview-content right">
+						<div class="video" style="width: 74.9%; height: 29.2%; position:relative; padding-top:45.5%; left: -3.5%;">
+							<!-- Flash Video Player -->
+							
+					 		<!-- HTML5 Fallback -->
+							<div id="videoDiv" style="visibility: visible;">
+								<video controls="controls" poster="pages/video.png" width="100%" height="100%">
+									<source src="http://mpcthemes.net/flipbook/html/pages/video/zanimotion.mp4" type="video/mp4">
+									<source src="http://mpcthemes.net/flipbook/html/pages/video/zanimotion.ogv" type="video/ogg">
+									Your browser does not support the video tag.
+								</video>
+							</div>
+						</div>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/14-15.jpg" class="bg-img" style="height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/14-15-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div class="turn-page-wrapper odd" page="15" style="position: absolute; top: 0px; right: 0px; width: 356px; height: 510px; z-index: 16;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px; transform-origin: 0% 100% 0px;"><div class="fb-page double turn-page p15" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 100% 0px;"><div class="fb-page-edge-shadow-right" style="height: 490px;"></div><div class="fb-inside-shadow-right" style="height: 490px;"></div>
+			<div class="page-content odd" style="width: 346px; height: 490px;">
+				<div class="container">
+					<div class="preview-content video left">
+						<h3 class="enlarge" style="font-size: 23px; line-height: 19px;">All media in one book</h3>
+						
+						<h4 class="enlarge" style="color: rgb(144, 36, 21); font-size: 15px; line-height: 19px;">Flip book accepts everything:</h4>
+						
+						<ul class="enlarge" style="font-size: 14px; line-height: 19px;">
+							<li>images</li>
+							<li>html</li>
+							<li>audio</li>
+							<li>video</li>
+						</ul>
+					</div>
+					<div class="video-content preview-content right">
+						<div class="video" style="width: 74.9%; height: 29.2%; position:relative; padding-top:45.5%; left: -3.5%;">
+							<!-- Flash Video Player -->
+							
+					 		<!-- HTML5 Fallback -->
+							<div id="videoDiv" style="visibility: visible;">
+								<video controls="controls" poster="pages/video.png" width="100%" height="100%">
+									<source src="http://mpcthemes.net/flipbook/html/pages/video/zanimotion.mp4" type="video/mp4">
+									<source src="http://mpcthemes.net/flipbook/html/pages/video/zanimotion.ogv" type="video/ogg">
+									Your browser does not support the video tag.
+								</video>
+							</div>
+						</div>
+					</div>
+					<img src="./Responsive Flip Book powered by jQuery_files/14-15.jpg" class="bg-img" style="margin-left: 0px; height: 490px; width: 692px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/14-15-zoomed.jpg" class="bg-img zoom-large" style="margin-left: 0px; height: 490px; width: 692px;">
+				</div>
+			</div>
+		</div></div></div><div class="turn-page-wrapper last" page="16" style="position: absolute; top: 0px; left: 0px; width: 356px; height: 510px; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 622px; height: 622px;"></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 356px; height: 510px;"></div></div><div style="position: absolute; top: -20px; left: -435px; overflow: visible; z-index: auto; display: none;"><div class="page-transition first" page="1" style="position: absolute; top: 20px; left: 356px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition even" page="2" style="position: absolute; top: 20px; left: 444px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition odd" page="3" style="position: absolute; top: 20px; left: 356px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition even" page="4" style="position: absolute; top: 20px; left: 444px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition odd" page="5" style="position: absolute; top: 20px; left: 800px; overflow: hidden; z-index: 0; width: 622px; height: 622px; transform-origin: 0% 100% 0px; transform: translate3d(0px, -112px, 0px) rotate(-90deg); display: none;"><div style="position: absolute; top: auto; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px; right: auto; bottom: 0px; transform-origin: 0% 100% 0px; transform: rotate(90deg) translate3d(-356px, 510px, 0px);"><div class="fpage" style="cursor: default; width: 510px; height: 356px; transform-origin: 0% 0% 0px; transform: rotate(-90deg);"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0.719101, rgba(0, 0, 0, 0)), color-stop(0.94382, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));"></div></div></div></div><div class="page-transition even" page="6" style="position: absolute; top: 20px; left: 444px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition odd" page="7" style="position: absolute; top: 20px; left: 800px; overflow: hidden; z-index: 0; width: 622px; height: 622px; transform-origin: 0% 0% 0px; transform: translate3d(0px, 0px, 0px) rotate(90deg); display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px; right: 0px; bottom: auto; transform-origin: 0% 0% 0px; transform: rotate(-90deg) translate3d(-356px, 0px, 0px);"><div class="fpage" style="cursor: default; width: 510px; height: 356px; transform-origin: 0% 100% 0px; transform: translate3d(0px, -356px, 0px) rotate(90deg);"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px; background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0.719101, rgba(0, 0, 0, 0)), color-stop(0.94382, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));"></div></div></div></div><div class="page-transition even" page="8" style="position: absolute; top: 20px; left: 444px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition odd" page="9" style="position: absolute; top: 20px; left: 800px; overflow: hidden; z-index: 0; width: 622px; height: 622px; transform-origin: 0% 0% 0px; transform: translate3d(0px, 0px, 0px) rotate(90deg); display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px; right: 0px; bottom: auto; transform-origin: 0% 0% 0px; transform: rotate(-90deg) translate3d(-356px, 0px, 0px);"><div class="fpage" style="cursor: default; width: 510px; height: 356px; transform-origin: 0% 100% 0px; transform: translate3d(0px, -356px, 0px) rotate(90deg);"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px; background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0.719101, rgba(0, 0, 0, 0)), color-stop(0.94382, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));"></div></div></div></div><div class="page-transition even" page="10" style="position: absolute; top: 20px; left: 444px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition odd" page="11" style="position: absolute; top: 20px; left: 800px; overflow: hidden; z-index: 0; width: 622px; height: 622px; transform-origin: 0% 100% 0px; transform: translate3d(0px, -112px, 0px) rotate(-90deg); display: none;"><div style="position: absolute; top: auto; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px; right: auto; bottom: 0px; transform-origin: 0% 100% 0px; transform: rotate(90deg) translate3d(-356px, 510px, 0px);"><div class="fpage" style="cursor: default; width: 510px; height: 356px; transform-origin: 0% 0% 0px; transform: rotate(-90deg);"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0.719101, rgba(0, 0, 0, 0)), color-stop(0.94382, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));"></div></div></div></div><div class="page-transition even" page="12" style="position: absolute; top: 20px; left: 444px; overflow: hidden; z-index: 15; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition odd" page="13" style="position: absolute; top: 20px; left: 800px; overflow: hidden; z-index: 0; width: 622px; height: 622px; transform-origin: 0% 100% 0px; transform: translate3d(0px, -112px, 0px) rotate(-90deg); display: none;"><div style="position: absolute; top: auto; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px; right: auto; bottom: 0px; transform-origin: 0% 100% 0px; transform: rotate(90deg) translate3d(-356px, 510px, 0px);"><div class="fpage" style="cursor: default; width: 510px; height: 356px; transform-origin: 0% 0% 0px; transform: rotate(-90deg);"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0.719101, rgba(0, 0, 0, 0)), color-stop(0.94382, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));"></div></div></div></div><div class="page-transition even" page="14" style="position: absolute; top: 20px; left: 435px; overflow: hidden; z-index: 16; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div><div class="page-transition odd" page="15" style="position: absolute; top: 20px; left: 791px; overflow: hidden; z-index: 16; width: 622px; height: 622px; transform-origin: 0% 100% 0px; transform: translate3d(356px, -112px, 0px) rotate(-90deg); display: none;"><div style="position: absolute; top: auto; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px; right: auto; bottom: 0px; transform-origin: 0% 100% 0px; transform: rotate(90deg) translate3d(0px, 510px, 0px);"><div class="fpage" style="cursor: default; width: 510px; height: 356px; transform-origin: 0% 0% 0px; transform: rotate(-90deg);"><div class="fb-page turn-page p16" style="position: absolute; top: 0px; left: 0px; bottom: auto; right: auto; width: 356px; height: 510px; transform-origin: 0% 0% 0px;"><div class="fb-inside-shadow-left" style="height: 490px;"></div>
+			<div class="page-content last" style="width: 346px; height: 490px;">
+				<div class="container">
+					<img src="./Responsive Flip Book powered by jQuery_files/back-cover.jpg" class="bg-img" style="height: 490px; width: 346px;">
+					<img src="./Responsive Flip Book powered by jQuery_files/back-cover-zoomed.jpg" class="bg-img zoom-large" style="height: 490px; width: 346px;">
+				</div>
+			</div>
+		</div><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px; background-image: -webkit-gradient(linear, 0% 0%, 0% 0%, from(rgba(0, 0, 0, 0)), color-stop(0.8, rgba(0, 0, 0, 0.2)), to(rgba(255, 255, 255, 0.2)));"></div></div></div></div><div class="page-transition last" page="16" style="position: absolute; top: 20px; left: 435px; overflow: hidden; z-index: 0; display: none; width: 622px; height: 622px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; width: 356px; height: 510px;"><div class="fpage" style="cursor: default; width: 510px; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 510px; height: 356px;"></div></div></div></div></div><div class="fb-shadow-bottom-left" style="opacity: 1; width: 356px;"></div><div class="fb-shadow-bottom-right" style="opacity: 1; width: 356px;"></div><div class="fb-shadow-top-left" style="opacity: 1; width: 356px;"></div><div class="fb-shadow-top-right" style="opacity: 1; width: 356px;"></div></div> <!-- end Flip Book -->
+	
+	<!-- Flip Book Navigation -->
+	<div id="fb-nav-1" class="fb-nav mobile stacked" style="width: 370px; top: 0px; opacity: 1;">
+		<ul>
+			<li class="toc left">Table Of Content<span class="button"></span><span class="button-over"></span><span class="button-icon" style="top: 25px;"></span></li>
+			<li class="zoom center">Zoom<span class="button"></span><span class="button-over"></span><span class="button-icon" style="top: 24px;"></span></li>
+			<li class="slideshow center">Slide Show<span class="button"></span><span class="button-over"></span><span class="button-icon" style="top: 25px;"></span><span class="button-icon-over" style="top: 25px;"></span></li>
+			<li class="show-all right">Show All Pages<span class="button"></span><span class="button-over"></span><span class="button-icon" style="top: 26px;"></span></li>
+		</ul>
+				
+	</div> <!-- end FLip Book Nav -->
+<div class="next round mobile" style="top: 212px; opacity: 1; left: 1171px; right: 100px;"><span class="button" style="opacity: 1;"></span><span class="button-over" style="opacity: 0;"></span><span class="button-icon" style="left: 26px;"></span></div><div class="preview round mobile" style="top: 212px; opacity: 1; left: 325px;"><span class="button"></span><span class="button-over"></span><span class="button-icon" style="left: 22px;"></span></div></div> <!-- end Flip Book Container -->
+
+
+<div id="mpc-styles-switcher" style="left: -240px;">
+	<!-- <img src="http://www.mpcreation.pl/themeforest/eco_incorporated2/wp-content/themes/incorporated/images/slider/04.jpg"/> -->
+	
+	<div id="ss-bookmark">
+		<div id="ss-bookmark-icon"></div>
+	</div>
+	
+	<div id="ss-content">
+		<div class="ss-option logo"><img src="./Responsive Flip Book powered by jQuery_files/logo.png" class="ss-logo"></div><div class="ss-option first"><div class="ss-desc">See other examples</div><select class="ss-dropdown" id="ss_fb_dropdown" style="position: absolute; opacity: 0; font-size: 12px; height: 30px;"><option selected="selected" value="main">Flip Book Overview</option><option value="brochure">Brochure</option><option value="template-blue">Template Blue</option><option value="template-ocean">Template Ocean</option><option value="template-gold">Template Gold</option><option value="template-light">Template Light</option><option value="template-pistachio">Template Pistachio</option><option value="template-grass">Template Grass</option><option value="template-violet">Template Violet</option><option value="template-brownie">Template Brownie</option></select><span class="customStyleSelectBox" style="display: inline-block;"><span class="customStyleSelectBoxInner" style="width: 178px; display: inline-block;">Flip Book Overview</span></span></div><div class="ss-option"><div class="ss-desc">Change menu style</div><select class="ss-dropdown" id="ss_fb_menu" style="position: absolute; opacity: 0; font-size: 12px; height: 30px;"><option selected="selected" value="stacked">Stacked</option><option value="spread">Spread</option></select><span class="customStyleSelectBox" style="display: inline-block;"><span class="customStyleSelectBoxInner" style="width: 178px; display: inline-block;">Stacked</span></span></div><div class="ss-option"><div class="ss-desc">Choose background color</div><div id="inc_bg_color_picker" class="ss-colorSelector"><div style="background-color:#FAFAFA"></div></div><input class="ss-color" id="inc_bg_color" type="text" value="#FAFAFA"><div class="ss-picker-icon"></div></div><div class="ss-option last"><div class="ss-desc">Choose background pattern overlay</div><div id="ss_background_pattern"><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p12.png" style="background-color: rgb(113, 113, 113);"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-No Pattern" value="patterns/p12.png" checked=""></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p1.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Patern 1" value="patterns/p1.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p2.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 2" value="patterns/p2.png"></div><div class="ss-image no-margin"><img src="./Responsive Flip Book powered by jQuery_files/p3.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 3" value="patterns/p3.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p4.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 4" value="patterns/p4.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p5.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 5" value="patterns/p5.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p6.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 6" value="patterns/p6.png"></div><div class="ss-image no-margin"><img src="./Responsive Flip Book powered by jQuery_files/p7.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 7" value="patterns/p7.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p8.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 8" value="patterns/p8.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p9.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 9" value="patterns/p9.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p10.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 10" value="patterns/p10.png"></div><div class="ss-image no-margin"><img src="./Responsive Flip Book powered by jQuery_files/p24.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 24" value="patterns/p24.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p23.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 23" value="patterns/p23.jpg"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p13.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 13" value="patterns/p13.jpg"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p15.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 15" value="patterns/p15.jpg"></div><div class="ss-image no-margin"><img src="./Responsive Flip Book powered by jQuery_files/p14.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 14" value="patterns/p14.jpg"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p16.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 16" value="patterns/p16.jpg"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p17.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 17" value="patterns/p17.jpg"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p18.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 18" value="patterns/p18.jpg"></div><div class="ss-image no-margin"><img src="./Responsive Flip Book powered by jQuery_files/p19.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 19" value="patterns/p19.jpg"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p20.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 20" value="patterns/p20.png"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p21.jpg"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 21" value="patterns/p21.jpg"></div><div class="ss-image"><img src="./Responsive Flip Book powered by jQuery_files/p22.png"><input class="mp-radio" type="radio" name="inc_options[inc_background_image]" id="inc_options-inc_background_image-Pattern 22" value="patterns/p22.png"></div></div><div class="ss-desc-last"><i>and much more…</i></div></div>	
+	
+	</div> <!-- end ss-content -->
+</div> <!-- end mpc-styles-switcher -->
+
+<div class="colorpicker" id="collorpicker_609"><div class="colorpicker_color" style="background-color: rgb(255, 0, 0);"><div><div style="left: 0px; top: 3px;"></div></div></div><div class="colorpicker_hue"><div style="top: 150px;"></div></div><div class="colorpicker_new_color" style="background-color: rgb(250, 250, 250);"></div><div class="colorpicker_current_color" style="background-color: rgb(250, 250, 250);"></div><div class="colorpicker_hex"><input type="text" maxlength="6" size="6"></div><div class="colorpicker_rgb_r colorpicker_field"><input type="text" maxlength="3" size="3"><span></span></div><div class="colorpicker_rgb_g colorpicker_field"><input type="text" maxlength="3" size="3"><span></span></div><div class="colorpicker_rgb_b colorpicker_field"><input type="text" maxlength="3" size="3"><span></span></div><div class="colorpicker_hsb_h colorpicker_field"><input type="text" maxlength="3" size="3"><span></span></div><div class="colorpicker_hsb_s colorpicker_field"><input type="text" maxlength="3" size="3"><span></span></div><div class="colorpicker_hsb_b colorpicker_field"><input type="text" maxlength="3" size="3"><span></span></div><div class="colorpicker_submit"></div></div></body></html>
